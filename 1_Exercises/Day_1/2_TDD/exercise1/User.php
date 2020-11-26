@@ -14,12 +14,38 @@ class User
         $this->isLoggedIn = false;
     }
 
-    public static function register(User $user)
+    public static function register(User $user) : bool
     {
         if ($user->getUsername() != '' && $user->getPassword() != ''){
             $_SESSION['users'][] = $user;
+            return true;
         }
+        return false;
+    }
 
+    public static function login($username,$password) : ?User
+    {
+        foreach ($_SESSION['users'] as $k => $user){
+            if($user->username == $username && $user->password == $password){
+                $loggedInUser = $user;
+                $loggedInUser->setIsLoggedIn(true);
+
+                return $loggedInUser;
+            }
+        }
+        return null;
+    }
+
+    public static function changePassword($username,$password,$newPassword) :bool
+    {
+        foreach ($_SESSION['users'] as $k => $user){
+            if($user->username == $username && $user->password == $password){
+                $user->setPassword($newPassword);
+
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
