@@ -1,0 +1,7 @@
+{
+    "name": "alina/2_tdd",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    }
+}

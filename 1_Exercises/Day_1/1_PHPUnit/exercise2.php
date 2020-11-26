@@ -1,13 +1,15 @@
 <?php declare(strict_types=1);
 
-function numToTxt(int $number): bool
+function numToTxt(int $number): ?string
 {
 
     if (!is_int($number) || $number < 1 || $number > 999) {
         echo "Insert number from 1 to 999";
 
-        return false;
+        return null;
     }
+
+    $number = strval($number);
 
     $lengthNum = strlen(strval($number));
 
@@ -46,7 +48,7 @@ function numToTxt(int $number): bool
         'ten',
         'twenty',
         'thirty',
-        'fourty',
+        'forty',
         'fifty',
         'sixty',
         'seventy',
@@ -103,5 +105,5 @@ function numToTxt(int $number): bool
         }
     }
 
-    return $sum = $part1 . ' ' . $part2 . ' ' . $part3;
+    return $sum = trim($part1 . ' ' . $part2 . ' ' . $part3);
 }

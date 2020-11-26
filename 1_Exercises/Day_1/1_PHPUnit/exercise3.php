@@ -9,7 +9,7 @@ function fizzBuzz(int $number): string
 
     $output = '';
 
-    for ($i = 1; $i <= $number + 1; $i++) {
+    for ($i = 1; $i <= $number; $i++) {
         if ($i % 3 == 0 && $i % 5 == 0) {
             $output .= 'BuzzFizz';
         } else {

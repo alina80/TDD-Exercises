@@ -24,13 +24,13 @@ class BankAccount
         return $this->cash;
     }
 
-    public function depositCash(float $amount): BankAccount
+    public function depositCash(float $amount): float
     {
         if (is_numeric($amount) && $amount > 0) {
             $this->cash += $amount;
         }
 
-        return $this;
+        return $this->getCash();
     }
 
     public function withdrawCash(float $amount): ?float
@@ -49,8 +49,8 @@ class BankAccount
         return null;
     }
 
-    public function printInfo(): void
+    public function printInfo()
     {
-        echo $this->cash;
+         return $this->getCash();
     }
 }

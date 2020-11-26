@@ -28,18 +28,24 @@ class Calculator
     public function subtract(int $num1, int $num2): int
     {
         $result = $num1 - $num2;
-        $this->operationHistory[] = "subtracted $num2 to $num1 got $result";
+        $this->operationHistory[] = "subtracted $num2 from $num1 got $result";
 
         return $result;
     }
 
     public function multiplyMany(array $numbers): int
     {
-        $result = 1;
-        foreach ($numbers as $number) {
-            $result *= $number;
-        }
+        if (!empty($numbers)){
+            $result = 1;
+            foreach ($numbers as $number) {
+                $result *= $number;
+            }
+            $this->operationHistory[] = "multiplied numbers from [" . implode(',',$numbers) . "] got $result";
 
+        }else{
+            $result = 0;
+            $this->operationHistory[] = "empty array got $result";
+        }
         return $result;
     }
 
@@ -57,22 +63,26 @@ class Calculator
         return $result;
     }
 
-    public function printOperations(): Calculator
+    public function printOperations(): array
     {
         foreach ($this->operationHistory as $operation) {
             echo $operation . "<br>";
         }
 
-        return $this;
+        return $this->operationHistory;
     }
 
     public function clearOperations(): void
     {
         $this->operationHistory = [];
-        echo "Operations cleared";
+        if (empty($this->operationHistory)){
+            echo "Operations cleared";
+        }else{
+            echo "Error on clearing operations!";
+        }
     }
 
-    protected function addOperationHistory(string $operation): void
+    public function addOperationHistory(string $operation): void
     {
         $this->operationHistory[] = $operation;
     }
@@ -85,3 +95,4 @@ class Calculator
         return $result;
     }
 }
+

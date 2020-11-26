@@ -23,7 +23,7 @@
    E.g. 143 will be changed into "one hundred and forty-three".
    The numbers should be in the range of a thousand (excluding the
    thousand).
-   ```
+   
 2. Design tests for the function that will diagnose the error.
 3. The three basic test cases are:  
    * checking a number less than `10`
