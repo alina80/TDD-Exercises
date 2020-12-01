@@ -52,9 +52,9 @@ $twitterArraysSQL = [
 foreach ($twitterArraysSQL as $query) {
     try {
         $result = $conn->query($query);
-        echo "Tabela została stworzona poprawnie<br>";
+        echo "The table was created correctly<br>";
     } catch (PDOException $e) {
-        echo "Błąd podczas tworzenia tabeli: " . $e->getMessage() . "<br>";
+        echo "Error creating table: " . $e->getMessage() . "<br>";
     }
 }
 

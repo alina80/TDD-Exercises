@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="Twitter_TDD">
+	<table_data name="Comments">
+	</table_data>
+	<table_data name="Friendships">
+	</table_data>
+	<table_data name="Messages">
+	</table_data>
+	<table_data name="Tweets">
+	</table_data>
+	<table_data name="Users">
+	</table_data>
+</database>
+</mysqldump>

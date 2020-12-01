@@ -6,9 +6,9 @@ require_once(__DIR__ . "/class/Message.php");
 
 //define db settings
 define('DB_HOST', 'localhost');
-define('DB_USER', 'test');
-define('DB_PASSWORD', 'test');
-define('DB_DB', 'Twitter');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'coderslab');
+define('DB_DB', 'Twitter_TDD');
 
 try {
     // DB connection
